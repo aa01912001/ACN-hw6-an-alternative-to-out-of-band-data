@@ -22,11 +22,12 @@ int main(int argc, char *argv[])
 
     if((sockfd = socket(AF_INET, SOCK_STREAM, 0)) == -1) { // create socket
         printf("create socket error\n");
+	return 0;
     }
 
     if((listenfd = socket(AF_INET, SOCK_STREAM, 0)) == -1 ) { //create a socket for listening
         printf("create socket error\n");
-        return 1;
+        return 0;
     }
 
     printf("sockfd: %d, listenfd: %d\n", sockfd, listenfd);
