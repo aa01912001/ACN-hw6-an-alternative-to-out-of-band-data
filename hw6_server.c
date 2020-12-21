@@ -26,6 +26,7 @@ int main(int argc, char *argv[])
 
     if((sockfd = socket(AF_INET, SOCK_STREAM, 0)) == -1) { // create socket
         printf("create socket error\n");
+	return 0;
     }
 
     printf("listenfd: %d, sockfd: %d\n", listenfd, sockfd);
@@ -70,6 +71,7 @@ int main(int argc, char *argv[])
 
     if(connect(sockfd,(struct sockaddr *)&controladdr,sizeof(controladdr)) == -1){ // connect to client
         printf("Connection error\n");
+	return 0;
     }
 
     char message[100];
