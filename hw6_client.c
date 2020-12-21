@@ -15,7 +15,6 @@
 int main(int argc, char *argv[])
 {
     int sockfd, listenfd, connfd;
-    int cookie;
     struct sockaddr_in  servaddr, servaddr2; // servaddr2 is for listenfd
     char message[100] = {};
     char receiveMessage[100] = {};
