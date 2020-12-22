@@ -60,17 +60,16 @@ int main(int argc, char *argv[])
     }
 
     struct sockaddr_in my_addr;
-    char myIP[16];
-	unsigned int myPort;
+    unsigned int myPort;
 
-	// Get my listenfd ip address and port
-	bzero(&my_addr, sizeof(my_addr));
-	int len = sizeof(my_addr);
-	getsockname(listenfd, (struct sockaddr *) &my_addr, &len);
-	myPort = ntohs(my_addr.sin_port);
-	printf("listenfd port : %u\n", myPort);
-	char myPortStr[5];
-	sprintf(myPortStr, "%d", myPort);
+    // Get my listenfd ip address and port
+    bzero(&my_addr, sizeof(my_addr));
+    int len = sizeof(my_addr);
+    getsockname(listenfd, (struct sockaddr *) &my_addr, &len);
+    myPort = ntohs(my_addr.sin_port);
+    printf("listenfd port : %u\n", myPort);
+    char myPortStr[5];
+    sprintf(myPortStr, "%d", myPort);
 
 
     printf("%d send %s to server\n",  sockfd, myPortStr);
